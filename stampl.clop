@@ -1,0 +1,4 @@
+<login>|<email address>|<name>|<role>|<description>|<Idp UserName>
+jcho111@DOMAIN|jcho@domain.com|Jon Cho|Viewer|user|department b
+rsmith@domain.com|rsmith@domain.com|Robert Smith|Creator|publisher||rsmith@domain.com
+sjames4513@DOMAIN|sjames@domain.com|Sara James|GISProfessional|admin|Department Lead and GIS Manager
