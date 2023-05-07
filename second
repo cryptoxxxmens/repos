@@ -1,0 +1,41 @@
+<username>|<password>|<email address>|<name>|<user type>|<role>|<description>
+pub1|changepasswordlater|bwilliams@domain.com|Barbara Williams|Creator|publisher
+#!/usr/bin/env python
+# Requires Python 2.7+
+
+# Demonstrates how to add users to the ArcGIS Enterprise portal in bulk
+
+# For Http calls
+import urllib2, urllib, json
+# For system tools
+import sys, os
+# For reading passwords without echoing
+import getpass
+# Other utilities
+import Queue
+
+# Defines the entry point into the script
+def main(argv):
+
+    print "This script adds users in bulk into a portal. \n"
+
+    #Get parameters
+    parameters = getParametersFromUser ()
+
+    portalURL = parameters['portalURL']
+    provider = parameters['provider']
+    userName = parameters['userName']
+    password = parameters['password']
+    inUserFile = parameters['inUserFile']
+
+
+    #Get user data from file
+    usersData = getUserDataFromFile(inUserFile,provider)
+
+    #Create users
+    createUsers (userName,password, portalURL,provider, usersData)
+
+    raw_input('Press ENTER to close the script.')
+
+    return
+
