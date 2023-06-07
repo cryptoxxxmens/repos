@@ -1,0 +1,12 @@
+import subprocess
+
+# Список библиотек для установки
+libraries = ["requests", "beautifulsoup4"]
+
+# Установка библиотек
+for library in libraries:
+    try:
+        subprocess.check_call(["pip", "install", library])
+        print("Библиотека", library, "установлена успешно.")
+    except subprocess.CalledProcessError:
+        print("Ошибка при установке библиотеки", library)
